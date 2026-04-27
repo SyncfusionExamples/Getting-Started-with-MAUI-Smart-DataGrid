@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Azure;
+using Azure.AI.OpenAI;
+using Microsoft.Extensions.AI;
+using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Core.Hosting;
 using Syncfusion.Maui.SmartComponents.Hosting;
 
@@ -19,10 +22,14 @@ namespace SmartDataGridSample
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            Uri azureEndPoint = new Uri("https://testingopen.openai.azure.com/");
-            string deploymentName = "gpt-4.1";
-            string key = "hLGD4wgBAVsB4sWMom6ijN7j6JpEcV4Gw1nFWfxLpOlx5NpfpX7JJQQJ99BKACmepeSXJ3w3AAABACOGLIKd";
+            Uri azureEndPoint = new Uri("<MENTION-YOUR-URL>");
+            string deploymentName = "<MENTION-YOUR-DEPLOYMENT-NAME>";
+            string key = "<MENTION-YOUR-KEY>";
 
+            AzureOpenAIClient azureOpenAIClient = new AzureOpenAIClient(azureEndPoint, new AzureKeyCredential(key));
+            IChatClient azureChatClient = azureOpenAIClient.GetChatClient(deploymentName).AsIChatClient();
+
+            builder.Services.AddChatClient(azureChatClient);
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
