@@ -5,8 +5,8 @@ namespace SmartDataGridSample
         private string orderID;
         private string customerID;
         private string customer;
-        private string shipCity;
         private string shipCountry;
+        private string shipCity;
 
         public string OrderID
         {
@@ -20,16 +20,16 @@ namespace SmartDataGridSample
             set { customerID = value; }
         }
 
-        public string ShipCountry
-        {
-            get { return shipCountry; }
-            set { shipCountry = value; }
-        }
-
         public string Customer
         {
             get { return customer; }
             set { customer = value; }
+        }
+
+        public string ShipCountry
+        {
+            get { return shipCountry; }
+            set { shipCountry = value; }
         }
 
         public string ShipCity

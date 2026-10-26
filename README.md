@@ -5,8 +5,8 @@ This sample demonstrates how to get started with the .NET MAUI Smart DataGrid in
 ## Sample
 
 ```xaml
-    <smartdatagrid:SfSmartDataGrid x:Name="dataGrid" ItemsSource="{Binding OrderInfoCollection}"
-                                   ColumnWidthMode="Fill">
+    <smartdatagrid:SfSmartDataGrid x:Name="smartDataGrid" ItemsSource="{Binding OrderInfoCollection}"
+                                   ColumnWidthMode="Fill" Margin="0,10,0,0">
 
         <smartdatagrid:SfSmartDataGrid.AssistViewSettings>
             <smartdatagrid:DataGridAssistViewSettings SuggestedPrompts="{Binding Suggestions}"/>
@@ -16,13 +16,13 @@ This sample demonstrates how to get started with the .NET MAUI Smart DataGrid in
             <datagrid:DataGridNumericColumn HeaderText="Order ID" MappingName="OrderID" Format="0"
                                             HeaderTextAlignment="Center" CellTextAlignment="Center"/>
             <datagrid:DataGridTextColumn HeaderText="Customer ID" MappingName="CustomerID"
-                                        HeaderTextAlignment="Center" CellTextAlignment="Center"/>
+                                         HeaderTextAlignment="Center" CellTextAlignment="Center"/>
             <datagrid:DataGridTextColumn HeaderText="Name" MappingName="Customer"
-                                        HeaderTextAlignment="Center" CellTextAlignment="Center"/>
+                                         HeaderTextAlignment="Center" CellTextAlignment="Center"/>
             <datagrid:DataGridTextColumn HeaderText="Ship Country" MappingName="ShipCountry"
-                                        HeaderTextAlignment="Center" CellTextAlignment="Center"/>
+                                         HeaderTextAlignment="Center" CellTextAlignment="Center"/>
             <datagrid:DataGridTextColumn HeaderText="Ship City" MappingName="ShipCity"
-                                        HeaderTextAlignment="Center" CellTextAlignment="Center"/>
+                                         HeaderTextAlignment="Center" CellTextAlignment="Center"/>
         </smartdatagrid:SfSmartDataGrid.Columns>
     </smartdatagrid:SfSmartDataGrid>
 ```

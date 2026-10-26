@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:smartdatagrid="clr-namespace:Syncfusion.Maui.SmartComponents;assembly=Syncfusion.Maui.SmartComponents"
+             xmlns:smartdatagrid="clr-namespace:Syncfusion.Maui.SmartDataGrid;assembly=Syncfusion.Maui.SmartDataGrid"
              xmlns:datagrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              xmlns:local="clr-namespace:SmartDataGridSample"
              x:Class="SmartDataGridSample.MainPage">
@@ -10,8 +10,8 @@
         <local:OrderInfoRepository x:Name="viewModel"/>
     </ContentPage.BindingContext>
 
-    <smartdatagrid:SfSmartDataGrid x:Name="dataGrid" ItemsSource="{Binding OrderInfoCollection}"
-                                   ColumnWidthMode="Fill">
+    <smartdatagrid:SfSmartDataGrid x:Name="smartDataGrid" ItemsSource="{Binding OrderInfoCollection}"
+                                   ColumnWidthMode="Fill" Margin="0,10,0,0">
 
         <smartdatagrid:SfSmartDataGrid.AssistViewSettings>
             <smartdatagrid:DataGridAssistViewSettings SuggestedPrompts="{Binding Suggestions}"/>
