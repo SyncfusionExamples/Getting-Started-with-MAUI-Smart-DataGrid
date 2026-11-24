@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:smartdatagrid="clr-namespace:Syncfusion.Maui.SmartDataGrid;assembly=Syncfusion.Maui.SmartDataGrid"
+             xmlns:datagrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:local="clr-namespace:SmartDataGridSample"
+             x:Class="SmartDataGridSample.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:OrderInfoRepository x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+
+    <smartdatagrid:SfSmartDataGrid x:Name="smartDataGrid" ItemsSource="{Binding OrderInfoCollection}"
+                                   ColumnWidthMode="Fill" Margin="0,10,0,0">
+
+        <smartdatagrid:SfSmartDataGrid.AssistViewSettings>
+            <smartdatagrid:DataGridAssistViewSettings SuggestedPrompts="{Binding Suggestions}"/>
+        </smartdatagrid:SfSmartDataGrid.AssistViewSettings>
+
+        <smartdatagrid:SfSmartDataGrid.Columns>
+            <datagrid:DataGridNumericColumn HeaderText="Order ID" MappingName="OrderID" Format="0"
+                                            HeaderTextAlignment="Center" CellTextAlignment="Center"/>
+            <datagrid:DataGridTextColumn HeaderText="Customer ID" MappingName="CustomerID"
+                                         HeaderTextAlignment="Center" CellTextAlignment="Center"/>
+            <datagrid:DataGridTextColumn HeaderText="Name" MappingName="Customer"
+                                         HeaderTextAlignment="Center" CellTextAlignment="Center"/>
+            <datagrid:DataGridTextColumn HeaderText="Ship Country" MappingName="ShipCountry"
+                                         HeaderTextAlignment="Center" CellTextAlignment="Center"/>
+            <datagrid:DataGridTextColumn HeaderText="Ship City" MappingName="ShipCity"
+                                         HeaderTextAlignment="Center" CellTextAlignment="Center"/>
+        </smartdatagrid:SfSmartDataGrid.Columns>
+    </smartdatagrid:SfSmartDataGrid>
+
+</ContentPage>
